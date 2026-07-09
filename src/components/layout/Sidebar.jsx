@@ -19,12 +19,12 @@ export default function Sidebar({ isOpen, onClose }) {
     <>
       {isOpen && <div className="fixed inset-0 bg-slate-950/70 z-30 lg:hidden" onClick={onClose} />}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 bg-slate-900/80 backdrop-blur-xl border-r border-white/10 z-40 transform transition-transform duration-300 lg:translate-x-0 lg:static lg:z-0 ${
+        className={`fixed top-0 left-0 h-screen w-64 bg-slate-900/80 backdrop-blur-xl border-r border-white/10 z-40 overflow-y-auto transform transition-transform duration-300 lg:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="h-16 flex items-center gap-3 px-6 border-b border-white/10">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold">
+          <div className="w-9 h-9 rounded-xl bg-linear-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold">
             R
           </div>
           <span className="font-semibold text-slate-100">RestoFinance</span>
@@ -41,7 +41,7 @@ export default function Sidebar({ isOpen, onClose }) {
                   active ? 'bg-indigo-500/15 text-indigo-300 border border-indigo-500/30' : 'text-slate-400 hover:bg-white/5 hover:text-slate-100'
                 }`}
               >
-                <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d={item.icon} />
                 </svg>
                 {item.label}

@@ -13,9 +13,9 @@ import EmptyState from '../ui/EmptyState';
 import ConfirmDialog from '../ui/ConfirmDialog';
 import IncomeForm from './IncomeForm';
 import IncomeFilters from './IncomeFilters';
-import { INCOME_CATEGORIES } from '../../data/categories';
-import { formatCurrency } from '../../utils/currency';
-import { formatDate, isBetween } from '../../utils/date';
+import { INCOME_CATEGORIES } from '../../data/categories'
+import { formatCurrency } from '../../utils/currency'
+import { formatDate, isBetween } from '../../utils/date'
 
 export default function IncomeTable() {
   const { income, addIncome, updateIncome, deleteIncome } = useFinance();
