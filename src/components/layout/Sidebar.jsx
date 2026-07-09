@@ -19,7 +19,7 @@ export default function Sidebar({ isOpen, onClose }) {
     <>
       {isOpen && <div className="fixed inset-0 bg-slate-950/70 z-30 lg:hidden" onClick={onClose} />}
       <aside
-        className={`fixed top-0 left-0 h-screen w-64 bg-slate-900/80 backdrop-blur-xl border-r border-white/10 z-40 overflow-y-auto transform transition-transform duration-300 lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 w-64 bg-slate-900/80 backdrop-blur-xl border-r border-white/10 z-40 overflow-y-auto transform transition-transform duration-300 lg:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -29,7 +29,7 @@ export default function Sidebar({ isOpen, onClose }) {
           </div>
           <span className="font-semibold text-slate-100">RestoFinance</span>
         </div>
-        <nav className="p-4 space-y-1">
+        <nav className="p-4 pb-8 space-y-1">
           {navItems.map((item) => {
             const active = pathname === item.href;
             return (
